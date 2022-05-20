@@ -1,4 +1,4 @@
-baseURL = 'http://patchwork.swill.io/'
+baseURL = 'https://swill.github.io/patchwork/'
 languageCode = 'fr-ca'
 title = 'Les Jardins Patchwork'
 
