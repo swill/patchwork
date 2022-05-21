@@ -6,7 +6,7 @@ There are two recommended ways to contribute to the website.  In both cases, you
 
 1. In your browser, navigate to a piece of content that you want to edit within the Github repo.
    For example: `https://github.com/swill/patchwork/tree/main/content/homepage/<section>.fr.md`
-2. Click the **Pencil** icon in the top left of the page.
+2. Click the **Pencil** icon at the top right of the document.
 
    ![edit](static/images/docs/edit.png)
 3. On the **edit page**, you will be presented with a message to notify you that a **fork** of the repository will be added to your Github account.
@@ -19,7 +19,7 @@ There are two recommended ways to contribute to the website.  In both cases, you
    ![edit](static/images/docs/commit.png)
 7. You will be walked through a wizard to create a Pull Request from your fork against the official repository.
 8. The board / admins will review the changes, and merge the Pull Request once approved.
-9.  When the Pull Request is merged into `main`, a Github Action will automatically publish the change to the public website.
+9. When the Pull Request is merged into `main`, a Github Action will automatically publish the change to the public website.
 
 ## As a Developer (the comprehensive way)
 
@@ -61,14 +61,15 @@ It is recommended that you create a **fork** of the official repository and make
 3. Choose where you want to fork to, and then click the `Create fork` button.
 
    ![create fork](static/images/docs/fork_create.png)
-4. Within your fork, click on the `Code` button and copy the provided URL.  In my case, I am using SSH so I am not prompted for my username and password every time I interact with `git`.
+4. **Within your fork**, click on the `Code` button and copy the provided URL.  In my case (the screenshot below), I am using **SSH** so I am not prompted for my username and password every time I interact with `git`, which would be the case with **HTTPS**.  You can review the [Github docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) for how to setup an SSH key within your Github account.
 
    ![clone repo](static/images/docs/clone.png)
-5. Now that you have the URL, we are going to do a `git clone` to pull the code to your local computer.
+5. Now that you have the URL, we are going to do a `git clone` to pull the forked code to your local computer.
 
    ```bash
    # in my case, I would run the following command somewhere on my computer where I want the code to live
-   $ git clone git@github.com:swill/patchwork.git
+   # note that I am using SSH, the url would be different if you are using HTTPS
+   $ git clone git@github.com:<your_username>/patchwork.git
 
    # cd into the patchwork code directory
    $ cd patchwork
@@ -147,6 +148,18 @@ $ git commit -m "commit message for the change"
 # now you are all set to push your changes to your fork
 $ git push
 ```
+
+At this point, you will have code changes on your fork which you want to propose to be added to the official repo through a pull request.
+
+#### Create a pull request
+
+1. In your browser, navigate to: [github.com/swill/patchwork](https://github.com/swill/patchwork)
+2. Click on the `Pull requests` tab near the top left of the page.
+3. Github should recognize that you have changes in your fork that can be the source of a new pull request.
+4. I don't remember the exact wording, but there will be a green button on the top right that says something like `Create pull request`.
+5. Click the button and walk through the wizard to submit the pull request.
+6. The board / admins will review the changes, and merge the Pull Request once approved.
+7. When the pull request is merged into `main`, a Github Action will automatically publish the change to the public website.
 
 ### Pulling in upstream changes
 
